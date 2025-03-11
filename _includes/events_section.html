@@ -1,0 +1,19 @@
+{% assign from_year = section.items.first.date | date: "%Y" %}
+{% assign to_year = section.items.last.date | date: "%Y" %}
+
+<ul>
+  <h3>{{ section.name }}</h3>
+
+  {% if from_year == to_year %}
+    <p>{{ from_year }}</p>
+  {% else %}
+    <p>{{ from_year }} - {{ to_year }}</p>
+  {% endif %}
+
+  {% for event in section.items %}
+    <li>
+      <h4>{{ event.title }}</h4>
+      {{ event.content | markdownify }}
+    </li>
+  {% endfor %}
+</ul>

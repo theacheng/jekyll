@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+  </head>
+
+  <body>
+    <section>
+      <div></div>
+      <div>
+        We extend a warm welcome to Run With Sai.
+        <button>Buy Ticket</button>
+        <button>View Ticket</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Supported by</h2>
+      <ul style="list-style: none">
+        {% for supporter in site.supporters %}
+          <li style="display: inline-block">
+            <img src="{{ supporter.logo_path }}" alt="{{ supporter.alt }}">
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <h2>About Us</h2>
+      <div>
+        {{ content | markdownify }}
+        <img src="assets/images/about_us.jpg" alt="About us image in grid" style="height: 100px;">
+      </div>
+    </section>
+
+    <section>
+      <h2>Recent Marathon Highlight</h2>
+      <p>Watch the best moments from our previous marathon — from powerful finishes to unforgettable experiences.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/duJK155fetE?si=YQbGDZDoMGISaH02" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section>
+      {% assign upcoming_events = site.events | where_exp: "event", "event.date >= site.time" %}
+      {% assign past_events = site.events | where_exp: "event", "event.date < site.time" %}
+  
+      {% assign upcoming_events_by_sections = upcoming_events | group_by: "section" %}
+      {% assign past_events_by_sections = past_events | group_by: "section" %}
+
+      <div>
+        <h2>Upcomming Events</h2>
+        <ul>
+          {% for section in upcoming_events_by_sections %}
+            <li>{% include events_section.html section=section %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h2>Past Events</h2>
+        <ul>
+          {% for section in past_events_by_sections %}
+          <li>{% include events_section.html section=section %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for inquiries or support regarding registration, events, marketing, or sponsorship opportunities.</p>
+    </section>
+  </body>
+</html>
