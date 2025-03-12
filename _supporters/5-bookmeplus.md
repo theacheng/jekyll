@@ -1,4 +1,4 @@
 ---
 alt: "BookMe+"
-logo_path: assets/images/supporters/bookmeplus.png
+logo_path: media/supporters/bookmeplus.png
 ---

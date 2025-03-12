@@ -1,5 +1,5 @@
 ---
-title: "Run By Heart – 2nd Edition"
+event_title: "Run By Heart – 2nd Edition"
 section: "Charity Projects"
 images:
 - assets/images/events/run-by-heart-2nd/run_by_heart1.jpg

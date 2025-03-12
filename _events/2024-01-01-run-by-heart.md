@@ -1,5 +1,5 @@
 ---
-title: "Run by Heart (2024)"
+event_title: "Run by Heart (2024)"
 section: "Sport Events"
 ---
 

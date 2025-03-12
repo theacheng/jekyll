@@ -1,5 +1,5 @@
 ---
-title: "Run the Sai Virtual Run. 2021"
+event_title: "Run the Sai Virtual Run. 2021"
 section: "Sport Events"
 images:
 - assets/images/events/run_with_sai_virtual/run_with_sai_virtual.jpg

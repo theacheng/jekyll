@@ -7,3 +7,46 @@ collections:
     output: true
   supporters:
     output: true
+
+prose:
+  # rooturl: ''
+  media: "media"
+  ignore:
+    - _includes
+    - _layouts
+    - .github
+    - .vscode
+    - assets
+    - _config.yml
+    - .gitignore
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - README.md
+    - script.js
+    - style.css
+  metadata:
+    _supporters:
+      - name: "logo_path"
+        field:
+          element: "text"
+          label: "Logo"
+          value: ""
+      - name: "alt"
+        field:
+          element: "text"
+          label: "Alternative text"
+          value: ""
+    _events:
+      - name: "event_title"
+        field:
+          element: "text"
+          label: "Event Title"
+          value: ""
+      - name: "section"
+        field:
+          element: "select"
+          label: "Section"
+          options:
+            - name: "Sport Events"
+            - name: "Charity Projects"

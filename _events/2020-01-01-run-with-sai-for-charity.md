@@ -1,5 +1,5 @@
 ---
-title: "Run With Sai for Charity (2408 km)"
+event_title: "Run With Sai for Charity (2408 km)"
 section: "Charity Projects"
 ---
 

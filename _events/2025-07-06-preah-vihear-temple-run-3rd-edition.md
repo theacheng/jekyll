@@ -1,5 +1,5 @@
 ---
-title: "Preah Vihear Temple Run - 3rd Edition"
+event_title: "Preah Vihear Temple Run - 3rd Edition"
 section: "Sport Events"
 ---
 
