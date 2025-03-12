@@ -2,15 +2,15 @@
 title: "Run By Heart – 2nd Edition"
 section: "Charity Projects"
 images:
-- assets/images/events/run-by-heart-2nd/run_by_heart1.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart2.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart3.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart4.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart5.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart6.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart7.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart8.JPG
-- assets/images/events/run-by-heart-2nd/run_by_heart9.JPG
+- assets/images/events/run-by-heart-2nd/run_by_heart1.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart2.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart3.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart4.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart5.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart6.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart7.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart8.jpg
+- assets/images/events/run-by-heart-2nd/run_by_heart9.jpg
 ---
 
 **RUN BY HEART** is a charity running campaign created to raise donations for charity and promote healthcare through running. This is the second edition, which will take place on May 31, 2025, at the Olympic National Stadium.
