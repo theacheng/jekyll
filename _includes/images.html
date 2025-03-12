@@ -1,0 +1,24 @@
+<div class="mt-4">
+  <div class="row row-cols-2 g-3">
+    {% assign total_images = images | size %}
+    {% for image in images limit:4 %}
+      {% if forloop.last and total_images > 4 %}
+        <div class="col-md-6 mb-3">
+          <div class="image-container">
+            <img src="{{ image }}" alt="Event Image 4" class="img-fluid rounded"/>
+            <div class="image-overlay" onclick="openImageModal(0)">
+              <h4 class="text-white mb-0">
+                <span id="remainingCount"></span>
+                <i class="bx bx-camera ms-2"></i>
+              </h4>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="col">
+          <img src="{{ image }}" alt="Event Image 1" class="img-fluid rounded" onclick="openImageModal(1)" />
+        </div>
+      {% endif %}
+    {% endfor %}    
+  </div>
+</div>

@@ -1,0 +1,58 @@
+{% assign upcoming_events = site.events | where_exp: "event", "event.date >= site.time" %}
+{% assign past_events = site.events | where_exp: "event", "event.date < site.time" %}
+
+{% assign upcoming_events_by_sections=upcoming_events | group_by: "section" %}
+{% assign past_events_by_sections=past_events | group_by: "section" %}
+
+{% assign upcoming_events_from_year=upcoming_events.first.date | date: "%Y" %}
+{% assign upcoming_events_to_year=upcoming_events.last.date | date: "%Y" %}
+
+{% assign past_events_from_year=past_events.first.date | date: "%Y" %}
+{% assign past_events_to_year=past_events.last.date | date: "%Y" %}
+  
+<section id="all_events" class="container py-5">
+  <div class="row mt-xl-3 mb-xl-4 pb-4 py-md-4 py-lg-5">
+    <div class="col-12">
+      <h2 class="h1 text-center text-sm-start pb-3 pb-lg-0 mb-4 mb-lg-5 text-dark">
+        All Events
+      </h2>
+    </div>
+
+    <div class="col-lg-3 mb-4">
+      <div class="nav flex-nowrap flex-lg-column red-nav-pills" role="tablist" aria-orientation="vertical">
+        <a href="#upcoming-events"
+          class="nav-link d-block w-100 rounded-3 p-4 p-xl-5 me-2 me-sm-3 me-lg-0 mb-lg-3 active"
+          id="upcoming-events-tab" data-bs-toggle="pill" role="tab" aria-controls="upcoming-events"
+          aria-selected="true">
+          <div class="fs-xl fw-bold">UPCOMING EVENTS</div>
+          <div class="fs-3">
+            {% if upcoming_events_from_year == upcoming_events_to_year %} {{ upcoming_events_from_year }}
+            {% else %} {{ upcoming_events_from_year }} - {{ upcoming_events_to_year }}
+            {% endif %}
+          </div>
+        </a>
+        <a href="#previous-events" class="nav-link d-block w-100 rounded-3 p-4 p-xl-5" id="previous-events-tab"
+          data-bs-toggle="pill" role="tab" aria-controls="previous-events" aria-selected="false">
+          <div class="fs-xl fw-bold">OUR PREVIOUS PROJECTS</div>
+          <div class="fs-3">
+            {% if past_events_from_year == past_events_to_year %} {{ past_events_from_year }}
+            {% else %} {{ past_events_from_year }} - {{ past_events_to_year }}
+            {% endif %}
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-8 offset-lg-1">
+      <div class="tab-content">
+        {% assign id = "upcoming-events" %}
+        {% assign sections = upcoming_events_by_sections %}
+        {% include all_events_for_a_type.html %}
+
+        {% assign id = "previous-events" %}
+        {% assign sections = past_events_by_sections %}
+        {% include all_events_for_a_type.html %}
+      </div>
+    </div>
+  </div>
+</section>
