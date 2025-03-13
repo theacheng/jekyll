@@ -21,20 +21,19 @@
             </div>
 
             {% if images.size > 0 %}
-              <div id="imageModal" class="modal fade" tabindex="-1" aria-hidden="true" data-images="{{ images | jsonify }}">
+               <div id="imageModal{{ section.name }}" class="modal fade" tabindex="-1" aria-hidden="true" data-images='{{ images | jsonify }}'>
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                   <div class="modal-content bg-transparent border-0">
                     <div class="modal-body position-relative p-0 text-center">
-                      <img id="modalImage" src="" class="img-fluid rounded modal-img" />
-                      <i class="bx bx-chevron-left nav-arrow left-arrow" onclick="prevImage()"></i>
-                      <i class="bx bx-chevron-right nav-arrow right-arrow" onclick="nextImage()"></i>
-                      <span id="imageCount" class="image-counter"></span>
+                      <img id="modalImage{{ section.name }}" src="" class="img-fluid rounded modal-img" />
+                      <i class="bx bx-chevron-left nav-arrow left-arrow" onclick="prevImage('{{ section.name }}')"></i>
+                      <i class="bx bx-chevron-right nav-arrow right-arrow" onclick="nextImage('{{ section.name }}')"></i>
+                      <span id="imageCount{{ section.name }}" class="image-counter"></span>
                     </div>
                   </div>
                 </div>
               </div>
             {% endif %}
-
           </div>
         {% endfor %}
       </div>
