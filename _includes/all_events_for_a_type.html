@@ -1,4 +1,5 @@
-<div class="tab-pane fade show active" id="{{ id }}" role="tabpanel" aria-labelledby="{{ id }}-tab">
+<div class="tab-pane fade {% if id == 'upcoming-events' %}show active{% endif %}" 
+     id="{{ id }}" role="tabpanel" aria-labelledby="{{ id }}-tab">
   {% for section in sections %}
     <div class="border-bottom pb-5" aria-label="events-section">
       <h4 class="mb-4 pt-3">{{ section.name }}</h4>
@@ -23,11 +24,11 @@
               <div id="imageModal" class="modal fade" tabindex="-1" aria-hidden="true" data-images="{{ images | jsonify }}">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                   <div class="modal-content bg-transparent border-0">
-                    <div class="modal-body position-relative p-0 text-center" >
+                    <div class="modal-body position-relative p-0 text-center">
                       <img id="modalImage" src="" class="img-fluid rounded modal-img" />
                       <i class="bx bx-chevron-left nav-arrow left-arrow" onclick="prevImage()"></i>
                       <i class="bx bx-chevron-right nav-arrow right-arrow" onclick="nextImage()"></i>
-                      <span id="imageCount" class="image-counter" ></span>
+                      <span id="imageCount" class="image-counter"></span>
                     </div>
                   </div>
                 </div>
@@ -38,5 +39,7 @@
         {% endfor %}
       </div>
     </div>
+  {% else %}
+    <p class="text-muted">No events available.</p>
   {% endfor %}
 </div>
